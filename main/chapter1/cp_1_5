@@ -1,0 +1,10 @@
+#! /usr/bin/perl
+
+use strict;
+use warnings FATAL => 'all';
+
+my @line=`perldoc -u -f atan2`;
+foreach(@line) {
+    s/\w(<[^>]+)/\U$1/g;
+    print;
+}
